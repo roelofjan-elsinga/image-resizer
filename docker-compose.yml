@@ -1,0 +1,15 @@
+
+version: "2"
+services:
+    nginx:
+        build:
+            context: ./nginx
+        ports:
+            - "2000:80"
+        volumes:
+            - ./app:/var/app
+    fpm:
+        build:
+            context: ./fpm
+        volumes:
+            - ./app:/var/app

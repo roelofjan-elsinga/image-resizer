@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y software-properties-common language-pack-en-base \
     && LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php \
     && apt-get update \
-    && apt-get install -y php7.2 php7.2-fpm php7.2-mysql mcrypt php7.2-gd curl \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y php7.2 php7.2-fpm php7.2-mysql mcrypt php7.2-gd curl \
        php7.2-curl php-redis php7.2-mbstring php7.2-xml php7.2-soap php7.2-zip php-zmq composer supervisor
 
 RUN mkdir /run/php \
